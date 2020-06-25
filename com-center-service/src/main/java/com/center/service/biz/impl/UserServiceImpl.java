@@ -7,7 +7,7 @@ import com.center.service.biz.IUserService;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import utils.RelationMapperUtils;
+import com.center.common.utils.RelationMapperUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
