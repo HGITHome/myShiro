@@ -1,0 +1,4 @@
+com\center\service\biz\impl\UserServiceImpl.class
+com\center\service\controller\UserController.class
+com\center\service\ShiroApplication.class
+com\center\service\biz\IUserService.class
