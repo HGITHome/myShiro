@@ -5,6 +5,7 @@ import com.center.dao.entity.UserEo;
 import com.center.dao.mapper.IUserDao;
 import com.center.service.biz.IUserService;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import com.center.common.utils.RelationMapperUtils;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements IUserService {
     private IUserDao userDao;
 
     @Override
-    public int deleteByPrimaryKey(Integer id) {
+    public int deleteByPrimaryKey(Long id) {
         return  userDao.deleteByPrimaryKey(id);
     }
 
@@ -32,7 +33,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public UserDto selectByPrimaryKey(Integer id) {
+    public UserDto selectByPrimaryKey(Long id) {
         UserEo userEo = userDao.selectByPrimaryKey(id);
         UserDto userDto = new UserDto();
         if (null != userEo){
@@ -60,5 +61,21 @@ public class UserServiceImpl implements IUserService {
         UserEo userEo = new UserEo();
         RelationMapperUtils.entryAndDtoMapper(userDto,userEo,false);
         return userDao.updateByPrimaryKey(userEo);
+    }
+
+    @Override
+    public UserDto queryUserByUsername(String username) {
+        if (StringUtils.isBlank(username)) {
+            throw new RuntimeException("参数非法!");
+        }
+        UserEo userEo = new UserEo();
+        userEo.setUsername(username);
+        UserEo eo = userDao.selectOne(userEo);
+        if (eo != null){
+            UserDto userDto = new UserDto();
+            BeanUtils.copyProperties(eo,userDto);
+            return userDto;
+        }
+        return null;
     }
 }

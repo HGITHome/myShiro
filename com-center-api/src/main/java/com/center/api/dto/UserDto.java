@@ -2,61 +2,99 @@ package com.center.api.dto;
 
 
 import com.center.api.base.BaseDto;
+import com.center.common.annotation.RelMapper;
 
 import java.util.Date;
 
 @RelMapper
 public class UserDto extends BaseDto {
 
-
+    /**
+     * 主键id
+     */
     private Integer id;
 
 
+    /**
+     * 用户名
+     */
     private String username;
 
 
+    /**
+     * 密码
+     */
     private String password;
 
-
+    /**
+     * 昵称
+     */
     private String nickname;
 
-
+    /**
+     * 手机号码
+     */
     private String mobile;
 
-
+    /**
+     * 邮箱
+     */
     private String email;
 
-
+    /**
+     * qq
+     */
     private String qq;
 
-
+    /**
+     * 生日
+     */
     private Date birthday;
 
-
+    /**
+     * 性别
+     */
     private Integer gender;
 
-
+    /**
+     * 头像地址
+     */
     private String avatar;
 
-
+    /**
+     * 用户类型
+     */
     private String userType;
 
-
+    /**
+     * 注册ip地址
+     */
     private String regIp;
 
-
+    /**
+     * 最后登陆ip
+     */
     private String lastLoginIp;
 
-
+    /**
+     * 最后登陆时间
+     */
     private Date lastLoginTime;
 
 
+    /**
+     * 登陆次数
+     */
     private Integer loginCount;
 
-
+    /**
+     * 备注
+     */
     private String remark;
 
-
+    /**
+     * 状态：1启用，2禁用
+     */
     private Integer status;
 
     public Integer getId() {
