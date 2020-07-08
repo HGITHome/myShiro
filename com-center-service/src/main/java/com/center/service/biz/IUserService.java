@@ -47,4 +47,11 @@ public interface IUserService {
      * @return
      */
     UserDto queryUserByUsername(String username);
+
+    /**
+     * 通过角色id获取拥有该角色的用户列表
+     * @param roleoId
+     * @return
+     */
+    List<UserDto> listByRoleId(Long roleoId);
 }

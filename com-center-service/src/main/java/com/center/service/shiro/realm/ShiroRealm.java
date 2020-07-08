@@ -8,6 +8,7 @@ import com.center.common.enums.UserTypeEnum;
 import com.center.service.biz.IResourcesService;
 import com.center.service.biz.IRoleService;
 import com.center.service.biz.IUserService;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -15,7 +16,6 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
-import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
@@ -23,6 +23,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @ClassName ShiroRealm
@@ -58,8 +59,9 @@ public class ShiroRealm extends AuthorizingRealm {
 
         // 赋予角色
         List<RoleDto> roleList = roleService.listRolesByUserId(userId);
-        for (RoleDto role : roleList) {
-            info.addRole(role.getName());
+        if (CollectionUtils.isNotEmpty(roleList)) {
+            List<String> roleNames = roleList.stream().map(RoleDto :: getName).distinct().collect(Collectors.toList());
+            info.addRoles(roleNames);
         }
 
         // 赋予权限
@@ -75,7 +77,7 @@ public class ShiroRealm extends AuthorizingRealm {
         } else {
             resourcesList = resourcesService.listByUserId(userId);
         }
-
+        // 赋予资源路径
         if (!CollectionUtils.isEmpty(resourcesList)) {
             Set<String> permissionSet = new HashSet<>();
             for (ResourcesDto resources : resourcesList) {
@@ -94,7 +96,7 @@ public class ShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        //获取用户的输入的账号. 这个在拦截器那里调用shiro.login的接口进来的参数信息
+        // 获取用户的输入的账号. 这个在拦截器或者controller层那里调用shiro.login的接口进来的参数信息
         String username = (String) authenticationToken.getPrincipal();
         UserDto user = userService.queryUserByUsername(username);
         if (user == null) {
