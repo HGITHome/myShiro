@@ -12,6 +12,7 @@ import com.center.dao.mapper.IUserRoleRelationDao;
 import com.center.service.biz.IResourcesService;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
@@ -26,6 +27,8 @@ import java.util.stream.Collectors;
  * @Date 2020/7/5 11:20
  * @Version V1.0
  **/
+
+@Service
 public class ResourcesServiceImpl implements IResourcesService {
 
     @Resource

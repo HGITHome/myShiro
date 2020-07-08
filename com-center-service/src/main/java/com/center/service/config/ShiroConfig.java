@@ -59,6 +59,7 @@ public class ShiroConfig {
 
     @Autowired
     private IShiroService shiroService;
+
     @Autowired
     private RedisProperties redisProperties;
 

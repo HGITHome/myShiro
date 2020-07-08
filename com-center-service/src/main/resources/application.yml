@@ -33,6 +33,8 @@ spring:
     testOnReturn: false
     filters: stat,wall
     logSlowSql: true
+  main:
+    allow-bean-definition-overriding: true
   redis:
     database: 1
     # Redis服务器地址
