@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28bfdc12-b6d9-4355-b82f-e2cc1b58ca79" name="Default Changelist" comment="" />
+    <list default="true" id="28bfdc12-b6d9-4355-b82f-e2cc1b58ca79" name="Default Changelist" comment="修改类型" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,28 +17,28 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="alwaysUpdateSnapshots" value="true" />
-        <option name="localRepository" value="C:\Users\snail\Documents\repository" />
-        <option name="mavenHome" value="C:/Program Files (x86)/softs/maven/apache-maven-3.6.3" />
-        <option name="userSettingsFile" value="C:\Program Files (x86)\softs\maven\apache-maven-3.6.3\conf\settings.xml" />
+        <option name="localRepository" value="D:\soft\maven\repository" />
+        <option name="mavenHome" value="D:/soft/maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\soft\maven\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="1ddFe2E1XSvHCLXjm8xGpNWsAEu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -47,22 +47,28 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/com-center-service/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/com-center-service/src/main/java/com/center/service/config" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29425287" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.center.service" />
       <recent name="com.center.api" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.center.common.constants" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\projects\myshiro\myShiro\com-center-service\src\main\java\com\center\service\config" />
       <recent name="C:\Users\snail\Documents\ideaprojects\myShiro\com-center-service\src\main\resources" />
       <recent name="C:\Users\snail\Documents\ideaprojects\myShiro\com-center-api\src\main\resources" />
     </key>
@@ -88,11 +94,32 @@
       <updated>1592747154736</updated>
       <workItem from="1592747156452" duration="15935000" />
       <workItem from="1593076898307" duration="5314000" />
+      <workItem from="1594178912310" duration="11672000" />
     </task>
+    <task id="LOCAL-00001" summary="修改类型">
+      <created>1594179111862</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594179111862</updated>
+    </task>
+    <task id="LOCAL-00002" summary="添加类型">
+      <created>1594202601786</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594202601786</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改类型" />
+    <MESSAGE value="添加类型" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加类型" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Project_Structure" timestamp="1593074088556">
@@ -107,10 +134,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="387" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1593068074977" />
-    <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser" timestamp="1593067656418">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="669" y="38" key="#com.intellij.ide.util.MemberChooser" timestamp="1594199697008">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="446" y="25" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1593067656418" />
+    <state x="669" y="38" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594199697008" />
     <state x="371" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593073649172">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -127,30 +155,43 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="398" y="220" width="512" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.680@0.0.1280.680" timestamp="1592747769945" />
+    <state x="511" y="75" key="CommitChangelistDialog2" timestamp="1594202666979">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="511" y="75" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594202666979" />
     <state width="420" height="466" key="DebuggerActiveHint" timestamp="1593080589061">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="420" height="466" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1593080589061" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1593067864224">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="187" y="86" key="DiffContextDialog" timestamp="1594202634152">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="187" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594202634152" />
+    <state x="632" y="145" key="FileChooserDialogImpl" timestamp="1594179307867">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593067864224" />
-    <state width="1237" height="167" key="GridCell.Tab.0.bottom" timestamp="1593080571972">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="632" y="145" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594179307867" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1594195501656">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="167" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593080571972" />
-    <state width="1237" height="167" key="GridCell.Tab.0.center" timestamp="1593080571971">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594195501656" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1594195501656">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="167" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593080571971" />
-    <state width="1237" height="167" key="GridCell.Tab.0.left" timestamp="1593080571971">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594195501656" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1594195501656">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="167" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593080571971" />
-    <state width="1237" height="167" key="GridCell.Tab.0.right" timestamp="1593080571971">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594195501656" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1594195501656">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="167" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593080571971" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594195501656" />
     <state width="1237" height="319" key="GridCell.Tab.1.bottom" timestamp="1593080584072">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -183,10 +224,19 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="167" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1593080571817" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1593077300878">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1594179570216">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594179570216" />
+    <state x="673" y="207" key="SettingsEditor" timestamp="1594202976109">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1593077300878" />
+    <state x="673" y="207" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594202976109" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1594202603152">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594202603152" />
     <state x="28" y="35" key="new project wizard" timestamp="1592747355050">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -199,6 +249,11 @@
           <url>file://$PROJECT_DIR$/com-center-service/src/main/java/com/center/service/apiImpl/UserApiImpl.java</url>
           <line>19</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/com-center-common/src/main/java/com/center/common/utils/ResultUtil.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
