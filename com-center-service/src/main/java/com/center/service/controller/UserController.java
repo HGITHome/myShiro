@@ -27,7 +27,7 @@ public class UserController {
 
     @GetMapping("/detail/get")
     @ApiOperation(value = "获取用户详情接口")
-    public UserDto detailGet(@RequestParam(name = "id")Integer id){
+    public UserDto detailGet(@RequestParam(name = "id")Long id){
         return userService.selectByPrimaryKey(id);
     }
 
