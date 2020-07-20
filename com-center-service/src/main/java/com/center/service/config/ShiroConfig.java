@@ -22,7 +22,9 @@ package com.center.service.config;
 import com.center.service.biz.IShiroService;
 import com.center.service.propertis.RedisProperties;
 import com.center.service.redis.CustomRedisManager;
+import com.center.service.shiro.credentials.CredentialsMatcher;
 import com.center.service.shiro.realm.ShiroRealm;
+import org.apache.shiro.authc.Authenticator;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -86,16 +88,16 @@ public class ShiroConfig {
      * 3、部分过滤器可指定参数，如perms，roles
      */
     @Bean(name = "shiroFilter")
-    public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
+    public ShiroFilterFactoryBean shirFilter(@Qualifier("securityManager") SecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
-        shiroFilterFactoryBean.setLoginUrl("/passport/login/");
-        // 登录成功后要跳转的链接
-        shiroFilterFactoryBean.setSuccessUrl("/index");
-        // 未授权界面;
-        shiroFilterFactoryBean.setUnauthorizedUrl("/error/403");
+//        shiroFilterFactoryBean.setLoginUrl("/passport/login/");
+//        // 登录成功后要跳转的链接
+//        shiroFilterFactoryBean.setSuccessUrl("/index");
+//        // 未授权界面;
+//        shiroFilterFactoryBean.setUnauthorizedUrl("/error/403");
         // 配置数据库中的resource
         Map<String, String> filterChainDefinitionMap = shiroService.loadFilterChainDefinitions();
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
@@ -127,6 +129,7 @@ public class ShiroConfig {
     @Bean(name = "shiroRealm")
     public ShiroRealm shiroRealm() {
         ShiroRealm shiroRealm = new ShiroRealm();
+        shiroRealm.setCredentialsMatcher(credentialsMatcher());
         return shiroRealm;
     }
 
@@ -138,10 +141,10 @@ public class ShiroConfig {
      *
      * @return
      */
-//    @Bean(name = "credentialsMatcher")
-//    public RetryLimitCredentialsMatcher credentialsMatcher() {
-//        return new RetryLimitCredentialsMatcher();
-//    }
+    @Bean(name = "credentialsMatcher")
+    public CredentialsMatcher credentialsMatcher() {
+        return new CredentialsMatcher();
+    }
 
 
     /**
@@ -164,6 +167,7 @@ public class ShiroConfig {
      *
      * @return
      */
+    @Bean
     public RedisManager redisManager() {
         CustomRedisManager redisManager = new CustomRedisManager();
         redisManager.setHost(redisProperties.getHost());
@@ -192,7 +196,7 @@ public class ShiroConfig {
      * RedisSessionDAO shiro sessionDao层的实现 通过redis
      * 使用的是shiro-redis开源插件
      */
-//    @Bean
+    @Bean
     public RedisSessionDAO redisSessionDAO() {
         RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
         redisSessionDAO.setRedisManager(redisManager());
@@ -215,6 +219,7 @@ public class ShiroConfig {
      *
      * @return
      */
+    @Bean
     public SimpleCookie rememberMeCookie() {
         // 这个参数是cookie的名称，对应前端的checkbox的name = rememberMe
         SimpleCookie simpleCookie = new SimpleCookie("rememberMe");
@@ -228,6 +233,7 @@ public class ShiroConfig {
      *
      * @return
      */
+    @Bean
     public CookieRememberMeManager rememberMeManager() {
         CookieRememberMeManager cookieRememberMeManager = new CookieRememberMeManager();
         cookieRememberMeManager.setCookie(rememberMeCookie());
@@ -235,4 +241,5 @@ public class ShiroConfig {
         cookieRememberMeManager.setCipherKey(Base64.decode("1QWLxg+NYmxraMoxAXu/Iw=="));
         return cookieRememberMeManager;
     }
+
 }

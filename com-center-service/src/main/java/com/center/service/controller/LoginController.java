@@ -70,12 +70,12 @@ public class LoginController {
      * @return
      */
     @GetMapping("/logout")
-    public ModelAndView logout(RedirectAttributes redirectAttributes) {
+    public ResponseVO logout(RedirectAttributes redirectAttributes) {
         // http://www.oschina.net/question/99751_91561
         // 此处有坑： 退出登录，其实不用实现任何东西，只需要保留这个接口即可，也不可能通过下方的代码进行退出
         // SecurityUtils.getSubject().logout();
         // 因为退出操作是由Shiro控制的
         redirectAttributes.addFlashAttribute("message", "您已安全退出");
-        return ResultUtil.redirect("index");
+        return ResultUtil.success("登出成功！");
     }
 }

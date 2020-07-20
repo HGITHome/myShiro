@@ -55,7 +55,6 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         // 如果前面两个判断都没有通过，则判断是否勾选记住我，实现自动登录
         if(!subject.isRemembered()) {
             logger.warn("未设置“记住我”,跳转到登录页...");
-            response.sendRedirect(request.getContextPath() + "/passport/login");
             return false;
         }
         try {
@@ -68,7 +67,6 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             logger.info("[{}] - 已自动登录", user.getUsername());
         } catch (Exception e) {
             logger.error("自动登录失败", e);
-            response.sendRedirect(request.getContextPath() + "/passport/login");
             return false;
         }
         return true;
