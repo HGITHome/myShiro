@@ -43,6 +43,10 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         if (subject.isAuthenticated()) {
             return true;
         }
+        // 记住我的方式登录，直接通过
+        if (subject.isRemembered()) {
+            return true;
+        }
         // 获取session值
         Session session = subject.getSession(true);
         if (session.getAttribute(SessionConst.USER_SESSION_KEY) != null) {
