@@ -20,7 +20,7 @@ public class ResourcesEo extends BaseEo {
     @Column(name = "permission")
     private String permission;
 
-    @Column(name = "parentId")
+    @Column(name = "parent_id")
     private Long parentId;
 
     @Column(name = "sort")

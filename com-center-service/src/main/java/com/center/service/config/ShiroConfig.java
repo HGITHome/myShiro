@@ -88,10 +88,10 @@ public class ShiroConfig {
      * 3、部分过滤器可指定参数，如perms，roles
      */
     @Bean(name = "shiroFilter")
-    public ShiroFilterFactoryBean shirFilter(@Qualifier("securityManager") SecurityManager securityManager) {
+    public ShiroFilterFactoryBean shirFilter() {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager
-        shiroFilterFactoryBean.setSecurityManager(securityManager);
+        shiroFilterFactoryBean.setSecurityManager(securityManager());
         // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
 //        shiroFilterFactoryBean.setLoginUrl("/passport/login/");
 //        // 登录成功后要跳转的链接
@@ -113,10 +113,10 @@ public class ShiroConfig {
     }
 
     @Bean(name = "securityManager")
-    public SecurityManager securityManager(@Qualifier("shiroRealm") ShiroRealm authRealm) {
+    public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 设置realm.
-        securityManager.setRealm(authRealm);
+        securityManager.setRealm(shiroRealm());
         securityManager.setCacheManager(redisCacheManager());
         // 自定义session管理 使用redis
         securityManager.setSessionManager(sessionManager());

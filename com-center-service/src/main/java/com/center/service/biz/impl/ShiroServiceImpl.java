@@ -60,9 +60,9 @@ public class ShiroServiceImpl implements IShiroService {
          */
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
         // 配置退出过滤器,其中的具体的退出代码Shiro已经替我们实现了
-        filterChainDefinitionMap.put("/passport/logout", "logout");
-        filterChainDefinitionMap.put("/passport/login", "anon");
-        filterChainDefinitionMap.put("/passport/signin", "anon");
+        filterChainDefinitionMap.put("/auth/logout", "logout");
+        filterChainDefinitionMap.put("/auth/login", "anon");
+        filterChainDefinitionMap.put("/auth/signin", "anon");
         filterChainDefinitionMap.put("/favicon.ico", "anon");
         filterChainDefinitionMap.put("/error", "anon");
         filterChainDefinitionMap.put("/assets/**", "anon");
